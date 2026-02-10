@@ -1,0 +1,30 @@
+name: Publish JAR to Exchange on develop
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  publish-exchange:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ← SIN JDK, SIN Maven, SIN build
+      #- name: Set up JDK 17
+        #uses: actions/setup-java@v4
+        #with:
+          #java-version: '17'
+          #distribution: 'temurin'
+
+      #- name: Build with Maven
+        #run: mvn -B clean package  # Genera exchangeMuleJava-0.0.1-SNAPSHOT.jar
+
+      - name: Publish JAR to Anypoint Exchange
+        uses: josedagama/mulesoft-exchange-upload@1.0.0
+        with:
+          anypoint_username: ${{ secrets.ANYPOINT_USERNAME }}
+          anypoint_password: ${{ secrets.ANYPOINT_PASSWORD }}
+          anypoint_organization_id: ${{ secrets.ANYPOINT_ORG_ID }}

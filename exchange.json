@@ -1,0 +1,7 @@
+{
+  "name": "exchangeMuleJava",
+  "groupId": "com.coppel",
+  "assetId": "exchangeMuleJava",
+  "version": "1.0.0",
+  "main": "src/main/resources/api/mi-api.raml"
+}
