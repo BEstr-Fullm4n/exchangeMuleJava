@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("/hello")
     public String hello() {
-        return "Hello World with Exchange";
+        return "Hello World with Exchange v1.2";
     }
 }
